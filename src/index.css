@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,7 +11,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #f1bd00;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -36,6 +42,14 @@ h1 {
   line-height: 1.1;
 }
 
+img {
+  width: 100%;
+}
+
+ul, li {
+  list-style: none;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -43,9 +57,11 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #1355a7;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin: 8px;
+  width: 122px;
 }
 button:hover {
   border-color: #646cff;
@@ -53,6 +69,35 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.outer-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.inner-content-container {
+  width: 1280px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pokemon-container {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  column-gap: 8px;
+}
+
+.error-message {
+  color: red;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 @media (prefers-color-scheme: light) {
