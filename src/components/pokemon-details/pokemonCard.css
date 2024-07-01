@@ -1,4 +1,5 @@
 .pokemon-card {
+    width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,9 +13,14 @@
 }
 
 .image-container {
-    display: flex;
-    flex-direction: row;
     width: 220px;
+}
+
+.pokemon-abilities {
+    background-color: #e4e4e4;
+    padding: 8px 32px;
+    border-radius: 8px;
+    margin: 4px;
 }
 
 
