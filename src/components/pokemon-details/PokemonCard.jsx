@@ -20,20 +20,22 @@ function PokemonCard({url}) {
                         signal: controller.signal,
                     });
                 setPokemon(response.data);
-                toggleLoaded(true);
                 return function cleanup() {
                     controller.abort();
                 }
             } catch (error) {
                 toggleError(true);
+            } finally {
+                toggleLoaded(true);
             }
         }
         getPokemons();
-    }, []);
+    }, [url]);
 
     return <>
+        {!loaded && <div className="loading-message">Loading...</div>}
         {error && <p className="error-message">Sorry er is iets misgegaan!</p>}
-        {loaded ?
+        {loaded && !error &&
             <div className="pokemon-card">
                 <h1>{pokemon.name}</h1>
                 <div className="image-container">
@@ -49,7 +51,7 @@ function PokemonCard({url}) {
                         <li className="pokemon-abilities" key={ability.ability.name}>{ability.ability.name}</li>
                     ))}
                 </ul>
-            </div> : <div className="loading-message">Loading...</div>}
+            </div>}
     </>
 }
 
